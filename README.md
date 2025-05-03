@@ -17,8 +17,7 @@
   });
 </script>
 
-## test
-
+## test 2
 <video id="myVideo" width="640" height="480" controls></video>
 
 <script>
@@ -31,30 +30,34 @@
   ];
   let currentVideoIndex = 0;
 
-  function playCurrentVideo() {
-    video.innerHTML = `<source src="${videoSources[currentVideoIndex]}" type="video/mp4">`;
-    video.load(); // Important: Reload the video element to apply the new source
-    video.play();
+  function loadVideo(index) {
+    if (index < videoSources.length) {
+      video.innerHTML = `<source src="${videoSources[index]}" type="video/mp4">`;
+      video.load();
+    } else {
+      console.log('End of video sequence.');
+      // Optionally clear the video or loop back
+      // video.innerHTML = '';
+      currentVideoIndex = 0; // Loop back to the first video on next click
+    }
   }
 
-  video.addEventListener('ended', function() {
-    currentVideoIndex++;
-    if (currentVideoIndex < videoSources.length) {
-      playCurrentVideo();
-    } else {
-      // Optionally handle what happens after the last video
-      console.log('All videos played!');
-    }
-  });
-
   video.addEventListener('click', function() {
-    if (video.paused || video.ended) {
-      playCurrentVideo();
+    if (video.paused || video.ended || video.src === "") {
+      loadVideo(currentVideoIndex);
+      video.play();
+      currentVideoIndex++;
+      if (currentVideoIndex >= videoSources.length) {
+        currentVideoIndex = 0; // Reset for the next sequence
+      }
     } else {
       video.pause();
     }
   });
 
-  // Play the first video on initial load if you want
-  // playCurrentVideo();
+  // Load the first video on initial page load (but don't play)
+  if (videoSources.length > 0) {
+    loadVideo(0);
+    video.pause(); // Ensure it doesn't auto-play
+  }
 </script>
