@@ -1,4 +1,4 @@
-# Third Medium Contact
+<!--- # Third Medium Contact --->
 This is currently a testpage
 
 <video id="myVideo" width="640" height="480">
