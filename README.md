@@ -66,11 +66,11 @@
 
 <div style="position: relative; width: 640px; height: 480px;">
   <video id="baseVideo" width="640" height="480">
-    <source src="Animations/ContinuumPotatoes.mp4" type="video/mp4">
+    <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video id="overlayVideo" width="320" height="240" style="position: absolute; top: 25%; left: 25%; display: none;" controls>
-    <source src="Animations/PartialVideoFiles/k1_crop.mp4" type="video/mp4">
+  <video id="overlayVideo" width="640" height="480" style="position: display: none;" >
+    <source src="Animations/PartialVideoFiles/k2.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
