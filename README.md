@@ -94,6 +94,52 @@ This is currently a testpage
   });
 </script>
 
+## Test 3 v2
+
+<div style="position: relative; width: 640px; height: 480px;">
+  <video id="baseVideo" width="640" height="480">
+    <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video id="overlayVideo" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
+    <source src="Animations/PartialVideoFiles/k2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  const baseVideo = document.getElementById('baseVideo');
+  const overlayVideo = document.getElementById('overlayVideo');
+  let firstVideoEnded = false;
+
+  baseVideo.addEventListener('ended', function() {
+    baseVideo.style.display = 'none';
+    overlayVideo.style.display = 'block';
+    overlayVideo.play();
+    firstVideoEnded = true;
+  });
+
+  // Control playback of the current visible video on click
+  document.addEventListener('click', function(event) {
+    if (event.target === baseVideo && !firstVideoEnded) {
+      if (baseVideo.paused || baseVideo.ended) {
+        baseVideo.play();
+      } else {
+        baseVideo.pause();
+      }
+    } else if (event.target === overlayVideo && firstVideoEnded) {
+      if (overlayVideo.paused || overlayVideo.ended) {
+        overlayVideo.play();
+      } else {
+        overlayVideo.pause();
+      }
+    }
+  });
+
+  // Optionally start the first video on page load
+  // baseVideo.play();
+</script>
+
  
 ## Test 4
 <div style="position: relative; width: 640px; height: 480px;">
