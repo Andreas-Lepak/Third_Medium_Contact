@@ -93,3 +93,55 @@
     }
   });
 </script>
+
+
+## Test 4
+<div style="position: relative; width: 640px; height: 480px;">
+  <video id="video1" width="640" height="480">
+    <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video id="video2" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
+    <source src="Animations/PartialVideoFiles/k2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video id="video3" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
+    <source src="Animations/PartialVideoFiles/k3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  const video1 = document.getElementById('video1');
+  const video2 = document.getElementById('video2');
+  const video3 = document.getElementById('video3');
+  let currentVideo = video1;
+
+  video1.addEventListener('ended', function() {
+    video1.style.display = 'none';
+    video2.style.display = 'block';
+    video2.play();
+    currentVideo = video2;
+  });
+
+  video2.addEventListener('ended', function() {
+    video2.style.display = 'none';
+    video3.style.display = 'block';
+    video3.play();
+    currentVideo = video3;
+  });
+
+  // Optional: Make the current video clickable to play/pause
+  document.addEventListener('click', function(event) {
+    if (event.target === currentVideo) {
+      if (currentVideo.paused || currentVideo.ended) {
+        currentVideo.play();
+      } else {
+        currentVideo.pause();
+      }
+    }
+  });
+
+  // Optional: Start the first video on page load
+  // video1.play();
+</script>
