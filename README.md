@@ -25,21 +25,14 @@ This is currently a testpage
 </video>
 
 <script>
-  const video = document.getElementById('myVideo');
-
-  // Pause the video after 1 second
-  setTimeout(() => {
-    video.pause();
-  }, 1000);
-
-  // Toggle play/pause on click
-  video.addEventListener('click', function() {
-    if (video.paused || video.ended) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
+  const video = document.getElementById('myVideo');
+  video.addEventListener('click', function() {
+    if (video.paused || video.ended) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
 </script>
 
 ## test 2
