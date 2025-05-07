@@ -17,6 +17,31 @@ This is currently a testpage
   });
 </script>
 
+## test 1
+
+<video id="myVideo" width="640" height="480">
+  <source src="Animations/ContinuumPotatoes.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+  const video = document.getElementById('myVideo');
+
+  // Pause the video after 1 second
+  setTimeout(() => {
+    video.pause();
+  }, 1000);
+
+  // Toggle play/pause on click
+  video.addEventListener('click', function() {
+    if (video.paused || video.ended) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+</script>
+
 ## test 2
 <video id="myVideo" width="640" height="480" controls></video>
 
