@@ -17,6 +17,24 @@ This is currently a testpage
   });
 </script>
 
+## test 0
+
+<video id="myVideo" width="640" height="480">
+  <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+  const video = document.getElementById('myVideo');
+  video.addEventListener('click', function() {
+    if (video.paused || video.ended) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+</script>
+
 ## test 1
 
 <video id="myVideo" width="640" height="480">
