@@ -16,7 +16,7 @@ This is currently a testpage
   });
 </script>
 
-## test 0
+## test 1
 
 <div style="position: relative; width: 640px; height: 480px;">
   <video id="videoElement1" width="640" height="480">
@@ -39,24 +39,21 @@ This is currently a testpage
   const videoElement_3 = document.getElementById('videoElement3');
   let currentVideo = videoElement_1;
 
-  function playNextVideo() {
+  function transitionToNextVideo() {
     if (currentVideo === videoElement_1) {
       videoElement_1.style.display = 'none';
       videoElement_2.style.display = 'block';
       currentVideo = videoElement_2;
-      currentVideo.play();
     } else if (currentVideo === videoElement_2) {
       videoElement_2.style.display = 'none';
       videoElement_3.style.display = 'block';
       currentVideo = videoElement_3;
-      currentVideo.play();
     } else if (currentVideo === videoElement_3) {
-      // Optionally loop back to the first video or do nothing
+      // Optionally loop back or do nothing
+      console.log("All videos have been shown.");
       // videoElement_3.style.display = 'none';
       // videoElement_1.style.display = 'block';
       // currentVideo = videoElement_1;
-      // currentVideo.play();
-      console.log("All videos have played.");
     }
   }
 
@@ -71,11 +68,11 @@ This is currently a testpage
     }
   });
 
-  // Proceed to the next video after the current one ends
-  videoElement_1.addEventListener('ended', playNextVideo);
-  videoElement_2.addEventListener('ended', playNextVideo);
-  // We don't need an 'ended' listener for the last video unless you want to loop or trigger something else
+  // Transition to the next video when the current one ends
+  videoElement_1.addEventListener('ended', transitionToNextVideo);
+  videoElement_2.addEventListener('ended', transitionToNextVideo);
+  // No 'ended' listener needed for the last video unless you want a specific action
 
-  // Start the first video on page load
+  // Initially play the first video
   videoElement_1.play();
 </script>
