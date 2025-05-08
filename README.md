@@ -1,6 +1,4 @@
----
-title-heading: false
----
+
 
 This is currently a testpage
 
