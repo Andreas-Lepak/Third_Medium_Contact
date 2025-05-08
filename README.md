@@ -19,13 +19,13 @@ This is currently a testpage
 
 ## test 0
 
-<video id="myVideo" width="640" height="480">
+<video id="myVideo1" width="640" height="480">
   <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <script>
-  const video = document.getElementById('myVideo');
+  const video = document.getElementById('myVideo1');
   video.addEventListener('click', function() {
     if (video.paused || video.ended) {
       video.play();
@@ -37,13 +37,13 @@ This is currently a testpage
 
 ## test 1
 
-<video id="myVideo" width="640" height="480">
+<video id="myVideo3" width="640" height="480">
   <source src="Animations/ContinuumPotatoes.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <script>
-  const video = document.getElementById('myVideo');
+  const video = document.getElementById('myVideo3');
   video.addEventListener('click', function() {
     if (video.paused || video.ended) {
       video.play();
@@ -54,10 +54,10 @@ This is currently a testpage
 </script>
 
 ## test 2
-<video id="myVideo" width="640" height="480" controls></video>
+<video id="myVideo4" width="640" height="480" controls></video>
 
 <script>
-  const video = document.getElementById('myVideo');
+  const video = document.getElementById('myVideo4');
   const videoSources = [
     "Animations/PartialVideoFiles/k1.mp4",
     "Animations/PartialVideoFiles/k2.mp4",
@@ -98,37 +98,7 @@ This is currently a testpage
   }
 </script>
 
-## Test 3
 
-<div style="position: relative; width: 640px; height: 480px;">
-  <video id="baseVideo" width="640" height="480">
-    <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <video id="overlayVideo" width="640" height="480" style="position: display: none;" >
-    <source src="Animations/PartialVideoFiles/k2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<script>
-  const baseVideo = document.getElementById('baseVideo');
-  const overlayVideo = document.getElementById('overlayVideo');
-
-  baseVideo.addEventListener('ended', function() {
-    overlayVideo.style.display = 'block';
-    overlayVideo.play(); // Optionally start the overlay video immediately
-  });
-
-  // Optional: Make the base video clickable to play/pause
-  baseVideo.addEventListener('click', function() {
-    if (baseVideo.paused || baseVideo.ended) {
-      baseVideo.play();
-    } else {
-      baseVideo.pause();
-    }
-  });
-</script>
 
 ## Test 3 v2
 
