@@ -1,38 +1,37 @@
-<!--- # Third Medium Contact --->
 This is currently a testpage
 
-<video id="myVideo" width="640" height="480">
-  <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+<video id="myVideo1" width="640" height="480">
+  <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
- 
+
 <script>
-  const video = document.getElementById('myVideo');
-  video.addEventListener('click', function() {
-    if (video.paused || video.ended) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
+  const videoElement1 = document.getElementById('myVideo1');
+  videoElement1.addEventListener('click', function() {
+    if (videoElement1.paused || videoElement1.ended) {
+      videoElement1.play();
+    } else {
+      videoElement1.pause();
+    }
+  });
 </script>
 
 ## test 0
 
-<video id="myVideo1" width="640" height="480">
-  <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+<video id="myVideo2" width="640" height="480">
+  <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 <script>
-  const video = document.getElementById('myVideo1');
-  video.addEventListener('click', function() {
-    if (video.paused || video.ended) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
+  const videoElement2 = document.getElementById('myVideo2');
+  videoElement2.addEventListener('click', function() {
+    if (videoElement2.paused || videoElement2.ended) {
+      videoElement2.play();
+    } else {
+      videoElement2.pause();
+    }
+  });
 </script>
 
 ## test 1
@@ -43,21 +42,21 @@ This is currently a testpage
 </video>
 
 <script>
-  const video = document.getElementById('myVideo3');
-  video.addEventListener('click', function() {
-    if (video.paused || video.ended) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
+  const videoElement3 = document.getElementById('myVideo3');
+  videoElement3.addEventListener('click', function() {
+    if (videoElement3.paused || videoElement3.ended) {
+      videoElement3.play();
+    } else {
+      videoElement3.pause();
+    }
+  });
 </script>
 
 ## test 2
 <video id="myVideo4" width="640" height="480" controls></video>
 
 <script>
-  const video = document.getElementById('myVideo4');
+  const videoElement4 = document.getElementById('myVideo4');
   const videoSources = [
     "Animations/PartialVideoFiles/k1.mp4",
     "Animations/PartialVideoFiles/k2.mp4",
@@ -68,33 +67,33 @@ This is currently a testpage
 
   function loadVideo(index) {
     if (index < videoSources.length) {
-      video.innerHTML = `<source src="${videoSources[index]}" type="video/mp4">`;
-      video.load();
+      videoElement4.innerHTML = `<source src="${videoSources[index]}" type="video/mp4">`;
+      videoElement4.load();
     } else {
       console.log('End of video sequence.');
       // Optionally clear the video or loop back
-      // video.innerHTML = '';
+      // videoElement4.innerHTML = '';
       currentVideoIndex = 0; // Loop back to the first video on next click
     }
   }
 
-  video.addEventListener('click', function() {
-    if (video.paused || video.ended || video.src === "") {
+  videoElement4.addEventListener('click', function() {
+    if (videoElement4.paused || videoElement4.ended || videoElement4.src === "") {
       loadVideo(currentVideoIndex);
-      video.play();
+      videoElement4.play();
       currentVideoIndex++;
       if (currentVideoIndex >= videoSources.length) {
         currentVideoIndex = 0; // Reset for the next sequence
       }
     } else {
-      video.pause();
+      videoElement4.pause();
     }
   });
 
   // Load the first video on initial page load (but don't play)
   if (videoSources.length > 0) {
     loadVideo(0);
-    video.pause(); // Ensure it doesn't auto-play
+    videoElement4.pause(); // Ensure it doesn't auto-play
   }
 </script>
 
@@ -146,41 +145,41 @@ This is currently a testpage
   // baseVideo.play();
 </script>
 
- 
+
 ## Test 4
 <div style="position: relative; width: 640px; height: 480px;">
-  <video id="video1" width="640" height="480">
+  <video id="videoElement1" width="640" height="480">
     <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video id="video2" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
+  <video id="videoElement2" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
     <source src="Animations/PartialVideoFiles/k2.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video id="video3" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
+  <video id="videoElement3" width="640" height="480" style="position: absolute; top: 0; left: 0; display: none;" >
     <source src="Animations/PartialVideoFiles/k3.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
 
 <script>
-  const video1 = document.getElementById('video1');
-  const video2 = document.getElementById('video2');
-  const video3 = document.getElementById('video3');
-  let currentVideo = video1;
+  const videoElement_1 = document.getElementById('videoElement1');
+  const videoElement_2 = document.getElementById('videoElement2');
+  const videoElement_3 = document.getElementById('videoElement3');
+  let currentVideo = videoElement_1;
 
-  video1.addEventListener('ended', function() {
-    video1.style.display = 'none';
-    video2.style.display = 'block';
-    video2.play();
-    currentVideo = video2;
+  videoElement_1.addEventListener('ended', function() {
+    videoElement_1.style.display = 'none';
+    videoElement_2.style.display = 'block';
+    videoElement_2.play();
+    currentVideo = videoElement_2;
   });
 
-  video2.addEventListener('ended', function() {
-    video2.style.display = 'none';
-    video3.style.display = 'block';
-    video3.play();
-    currentVideo = video3;
+  videoElement_2.addEventListener('ended', function() {
+    videoElement_2.style.display = 'none';
+    videoElement_3.style.display = 'block';
+    videoElement_3.play();
+    currentVideo = videoElement_3;
   });
 
   // Optional: Make the current video clickable to play/pause
@@ -195,5 +194,5 @@ This is currently a testpage
   });
 
   // Optional: Start the first video on page load
-  // video1.play();
+  // videoElement_1.play();
 </script>
