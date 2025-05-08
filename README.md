@@ -5,7 +5,7 @@ This is currently a testpage
   <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
+ 
 <script>
   const video = document.getElementById('myVideo');
   video.addEventListener('click', function() {
