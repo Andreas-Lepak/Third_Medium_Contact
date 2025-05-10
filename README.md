@@ -42,7 +42,7 @@ This is currently a testpage
       standaloneVideo.pause();
     }
   });
-</script></script>
+</script>
 
 
 
