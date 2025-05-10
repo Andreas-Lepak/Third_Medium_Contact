@@ -17,6 +17,39 @@ This is currently a testpage
   });
 </script>
 -->
+
+
+
+<img src="path/to/lillebaeltbro.png" alt="Second Image Description" width="640">
+<br>
+<img src="path/to/bro_ende.png" alt="First Image Description" width="640">
+<br>
+<div style="width: 640px; height: 480px;">
+  <video id="standaloneVideo" width="640" height="480" muted>
+    <source src="path/to/cropped_output2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  const standaloneVideo = document.getElementById('standaloneVideo');
+
+  standaloneVideo.addEventListener('click', function() {
+    if (standaloneVideo.paused || standaloneVideo.ended) {
+      standaloneVideo.play();
+    } else {
+      standaloneVideo.pause();
+    }
+  });
+</script></script>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
 <div style="position: relative; width: 640px; height: 480px;">
   <video id="videoElement1" width="640" height="480">
     <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
