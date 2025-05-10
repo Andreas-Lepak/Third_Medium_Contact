@@ -23,9 +23,10 @@ This is currently a testpage
 <img src="Animations/PartialVideoFiles/lillebaeltbro.png" alt="test" width="640">
 <br>
 <img src="Animations/PartialVideoFiles/bro_ende.png" width="640">
-<br>
-<div style="width: 640px; height: 480px;">
-  <video id="standaloneVideo" width="640" height="480" muted>
+
+
+<div style="width: 640px; height: 300px;">
+  <video id="standaloneVideo" width="640" muted>
     <source src="Animations/PartialVideoFiles/cropped_output2.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
