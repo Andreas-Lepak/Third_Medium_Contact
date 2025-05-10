@@ -20,9 +20,9 @@ This is currently a testpage
 
 
 
-<img src="Animations/PartialVideoFiles/lillebaeltbro.png" alt="Second Image Description" width="640">
+<img src="Animations/PartialVideoFiles/lillebaeltbro.png" alt="test" width="640">
 <br>
-<img src="Animations/PartialVideoFiles/bro_ende.png" alt="First Image Description" width="640">
+<img src="Animations/PartialVideoFiles/bro_ende.png" width="640">
 <br>
 <div style="width: 640px; height: 480px;">
   <video id="standaloneVideo" width="640" height="480" muted>
