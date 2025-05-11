@@ -161,41 +161,41 @@ This is currently a testpage
   const videoElement_21 = document.getElementById('videoElement21');
   const videoElement_22 = document.getElementById('videoElement22');
   const videoElement_23 = document.getElementById('videoElement23');
-  let currentVideo = videoElement_21;
+  let currentVideo2 = videoElement_21;
 
-  function transitionToNextVideo() {
-    if (currentVideo === videoElement_21) {
+  function transitionToNextVideo2() {
+    if (currentVideo2 === videoElement_21) {
       videoElement_21.style.display = 'none';
       videoElement_22.style.display = 'block';
-      currentVideo = videoElement_22;
-    } else if (currentVideo === videoElement_22) {
+      currentVideo2 = videoElement_22;
+    } else if (currentVideo2 === videoElement_22) {
       videoElement_22.style.display = 'none';
       videoElement_23.style.display = 'block';
-      currentVideo = videoElement_23;
-    } else if (currentVideo === videoElement_23) {
+      currentVideo2 = videoElement_23;
+    } else if (currentVideo2 === videoElement_23) {
       // Optionally loop back to the beginning
       console.log("All videos have been shown.");
       // videoElement_23.style.display = 'none';
       // videoElement_21.style.display = 'block';
-      // currentVideo = videoElement_21;
+      // currentVideo2 = videoElement_21;
     }
   }
 
   // Play/pause the current video on click
   document.addEventListener('click', function(event) {
-    if (event.target === currentVideo) {
-      if (currentVideo.paused || currentVideo.ended) {
-        currentVideo.play();
+    if (event.target === currentVideo2) {
+      if (currentVideo2.paused || currentVideo2.ended) {
+        currentVideo2.play();
       } else {
-        currentVideo.pause();
+        currentVideo2.pause();
       }
     }
   });
 
   // Transition to the next video when the current one ends
-  videoElement_21.addEventListener('ended', transitionToNextVideo);
-  videoElement_22.addEventListener('ended', transitionToNextVideo);
-  videoElement_23.addEventListener('ended', transitionToNextVideo);
+  videoElement_21.addEventListener('ended', transitionToNextVideo2);
+  videoElement_22.addEventListener('ended', transitionToNextVideo2);
+  videoElement_23.addEventListener('ended', transitionToNextVideo2);
   // No 'ended' listener needed for the last video unless you want a specific action
 
   // Initially play the first video
@@ -204,8 +204,26 @@ This is currently a testpage
 
 
 
+<br><br><br>
 
+<div style="width: 640px; height: 300px;">
+  <video id="vid1" width="640" muted>
+    <source src="Animations/PartialVideoFiles/GL_part1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
+<script>
+  const vid1 = document.getElementById('vid1');
+
+  vid1.addEventListener('click', function() {
+    if (vid1.paused || vid1.ended) {
+      vid1.play();
+    } else {
+      vid1.pause();
+    }
+  });
+</script>
 
 
 
