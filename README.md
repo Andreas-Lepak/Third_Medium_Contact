@@ -204,49 +204,6 @@ This is currently a testpage
 
 
 
-<br><br><br>
-
-<div style="width: 640px; height: 300px;">
-  <video id="vid1" width="640" muted>
-    <source src="Animations/PartialVideoFiles/GL_part1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<script>
-  const vid1 = document.getElementById('vid1');
-
-  vid1.addEventListener('click', function() {
-    if (vid1.paused || vid1.ended) {
-      vid1.play();
-    } else {
-      vid1.pause();
-    }
-  });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
