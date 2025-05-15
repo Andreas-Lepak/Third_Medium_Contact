@@ -1,29 +1,3 @@
-<!--
-This is currently a testpage
-
-<video id="myVideo1" width="640" height="480">
-  <source src="Animations/PartialVideoFiles/k1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<script>
-  const videoElement1 = document.getElementById('myVideo1');
-  videoElement1.addEventListener('click', function() {
-    if (videoElement1.paused || videoElement1.ended) {
-      videoElement1.play();
-    } else {
-      videoElement1.pause();
-    }
-  });
-</script>
--->
-
-
-
-<img src="Animations/PartialVideoFiles/lillebaeltbro.png" alt="test" width="640">
-<br>
-<img src="Animations/PartialVideoFiles/bro_ende.png" width="640">
-
 
 <div style="width: 640px; height: 300px;">
   <video id="standaloneVideo" width="640" muted>
